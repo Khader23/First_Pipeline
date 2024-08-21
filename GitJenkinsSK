@@ -20,7 +20,7 @@ agent any
                 success{
 
                     
-                    emailext to: "khadersufiya@gmail.com",
+                    mail to: "khadersufiya@gmail.com",
                     subject: "Test Status Email",
                     body: "Test was successful!",
                
@@ -39,7 +39,7 @@ agent any
              } 
         post{
                 success{
-                    emailext to: "khadersufiya@gmail.com",
+                    mail to: "khadersufiya@gmail.com",
                     subject: "Security Scan Status Email",
                     body: "Security Scan was successful!",
 
@@ -59,7 +59,7 @@ agent any
              } 
         post{
                 success{
-                    emailext to: "khadersufiya@gmail.com",
+                    mail to: "khadersufiya@gmail.com",
                     subject: "Test Status Email",
                     body: "Test was successful!"
                 }
