@@ -14,16 +14,16 @@ agent any
       stage('Unit and Integration Tests'){        
         steps{ 
               echo "Run units test for code functionality and integration tests to assemble all the componenets into an application, use 'TestComplete' test automation tool" 
-              sh 'echo "Log content" > "Unit and Integration Tests.txt"'
+               
             } 
         post{
                 success{
 
-                    archiveArtifacts artifacts: '**/*.log', allowEmptyArchive: true
+                    
                     emailext to: "khadersufiya@gmail.com",
                     subject: "Test Status Email",
                     body: "Test was successful!",
-                    attachmentsPattern: '**/*.log'
+               
                 }
 
             }
