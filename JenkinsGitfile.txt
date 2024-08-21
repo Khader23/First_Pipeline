@@ -1,0 +1,48 @@
+//Pipeline Block 
+pipeline { 
+    //Jenkins will run the jobs on any available nodes    
+agent any 
+
+  //First stage is build    
+  stages{       
+      stage('Build'){         
+        steps{ 
+              echo "Code compilation and packaging stage, a build automation tool to use is Maven" 
+         
+            } 
+        } 
+      stage('Unit and Integration Tests'){        
+        steps{ 
+              echo "Run units test for code functionality and integration tests to assemble all the componenets into an application, use 'TestComplete' test automation tool" 
+             
+            } 
+        }        
+      stage('Code Analysis'){   
+        steps{ 
+              echo "Analyze code and compare it against industry standards to ensure the requirements are met, the code analysis tool for this is SonarQube" 
+            } 
+       } 
+       stage('Security Scan'){    
+        steps{             
+              echo "Check code for any vulnerabilities, use Synk to do code scanning" 
+             } 
+      }        
+      stage('Deploy to Staging'){            
+        steps{ 
+              echo "Deploy the application to a staging server" 
+              } 
+       } 
+      stage('Integration Tests on Staging'){        
+        steps{ 
+              echo "Run integration tests on the staging environment this will make sure the application functions correctly if it was in a production-like environment"
+             } 
+        } 
+      stage('Deploy to Production'){        
+            
+        steps{ 
+              echo "Deploy the application to a production server"             
+             } 
+        } 
+       
+  } 
+} 
