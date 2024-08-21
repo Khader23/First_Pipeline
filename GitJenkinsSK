@@ -14,7 +14,7 @@ agent any
       stage('Unit and Integration Tests'){        
         steps{ 
               echo "Run units test for code functionality and integration tests to assemble all the componenets into an application, use 'TestComplete' test automation tool" 
-              sh 'echo "Log content" > "Unit and Integration Tests.txt"
+              sh 'echo "Log content" > "Unit and Integration Tests.txt"'
             } 
         post{
                 success{
