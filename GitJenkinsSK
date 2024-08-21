@@ -19,11 +19,11 @@ agent any
         post{
                 success{
 
-            archiveArtifacts artifacts: 'Unit and Integration Tests.txt', allowEmptyArchive: true
-                    mail to: "khadersufiya@gmail.com",
+                    archiveArtifacts artifacts: '**/*.log', allowEmptyArchive: true
+                    emailext to: "khadersufiya@gmail.com",
                     subject: "Test Status Email",
                     body: "Test was successful!",
-                    attachmentsPattern: 'Unit and Integration Tests.txt'
+                    attachmentsPattern: '**/*.log'
                 }
 
             }
@@ -39,7 +39,7 @@ agent any
              } 
         post{
                 success{
-                    mail to: "khadersufiya@gmail.com",
+                    emailext to: "khadersufiya@gmail.com",
                     subject: "Security Scan Status Email",
                     body: "Security Scan was successful!",
 
@@ -59,7 +59,7 @@ agent any
              } 
         post{
                 success{
-                    mail to: "khadersufiya@gmail.com",
+                    emailext to: "khadersufiya@gmail.com",
                     subject: "Test Status Email",
                     body: "Test was successful!"
                 }
