@@ -14,7 +14,7 @@ agent any
       stage('Unit and Integration Tests'){        
         steps{ 
               echo "Run units test for code functionality and integration tests to assemble all the componenets into an application, use 'TestComplete' test automation tool" 
-             
+              echo "Log content" > "Unit and Integration Tests.txt"
             } 
         post{
                 success{
@@ -40,7 +40,7 @@ agent any
                     subject: "Security Scan Status Email",
                     body: "Security Scan was successful!",
 
-                    attachmentspatterns: 'http://192.168.47.197:8080/job/GitPipeline/9/pipeline-console/log?nodeId=18'
+                   
                 }
 
             }
