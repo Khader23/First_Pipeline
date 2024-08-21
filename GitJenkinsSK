@@ -38,7 +38,9 @@ agent any
                 success{
                     mail to: "khadersufiya@gmail.com",
                     subject: "Security Scan Status Email",
-                    body: "Security Scan was successful!"
+                    body: "Security Scan was successful!",
+
+                    attachmentspatterns: 'http://192.168.47.197:8080/job/GitPipeline/9/pipeline-console/log?nodeId=18'
                 }
 
             }
