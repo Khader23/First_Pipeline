@@ -19,11 +19,11 @@ agent any
         post {
                 success{
 
-                 mail(   
+                    
                     email to: "khadersufiya@gmail.com",
                     subject: "Unit and Integration Test Status Email",
                     body: "Test was successful!"
-               )
+               
                 }
 
             }
