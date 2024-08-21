@@ -52,6 +52,14 @@ agent any
         steps{ 
               echo "Run integration tests on the staging environment this will make sure the application functions correctly if it was in a production-like environment"
              } 
+        post{
+                success{
+                    mail to: "khadersufiya@gmail.com",
+                    subject: "Test Status Email",
+                    body: "Test was successful!"
+                }
+
+            }
         } 
       stage('Deploy to Production'){        
             
