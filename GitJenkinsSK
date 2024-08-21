@@ -22,7 +22,7 @@ agent any
                 success{
 
                  emailext(   
-                    mail to: "khadersufiya@gmail.com",
+                    email to: "khadersufiya@gmail.com",
                     subject: "Unit and Integration Test Status Email",
                     body: "Test was successful!",
                     attachmentsPattern: 'test.log'
@@ -42,7 +42,7 @@ agent any
              } 
         post{
                 success{
-                    mail to: "khadersufiya@gmail.com",
+                    emailext to: "khadersufiya@gmail.com",
                     subject: "Security Scan Status Email",
                     body: "Security Scan was successful!"
 
@@ -62,7 +62,7 @@ agent any
              } 
         post{
                 success{
-                    mail to: "khadersufiya@gmail.com",
+                    emailext to: "khadersufiya@gmail.com",
                     subject: "Integration Test Status Email",
                     body: "Test was successful!"
                 }
