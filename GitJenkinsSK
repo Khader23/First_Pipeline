@@ -16,6 +16,14 @@ agent any
               echo "Run units test for code functionality and integration tests to assemble all the componenets into an application, use 'TestComplete' test automation tool" 
              
             } 
+        post{
+                success{
+                    mail to: "khadersufiya@gmail.com",
+                    subject: "Test Status Email"
+                    body: "Test was successful!"
+                }
+
+            }
         }        
       stage('Code Analysis'){   
         steps{ 
@@ -26,6 +34,14 @@ agent any
         steps{             
               echo "Check code for any vulnerabilities, use Synk to do code scanning" 
              } 
+        post{
+                success{
+                    mail to: "khadersufiya@gmail.com",
+                    subject: "Security Scan Status Email"
+                    body: "Security Scan was successful!"
+                }
+
+            }
       }        
       stage('Deploy to Staging'){            
         steps{ 
