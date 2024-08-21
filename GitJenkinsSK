@@ -14,18 +14,15 @@ agent any
       stage('Unit and Integration Tests'){        
         steps{ 
             echo "Run units test for code functionality and integration tests to assemble all the componenets into an application, use 'TestComplete' test automation tool" 
-            script{
-              sh 'echo "Run units test for code functionality and integration tests to assemble all the componenets into an application, use 'TestComplete' test automation tool" > test.log'
-            }
+            
             } 
         post {
                 success{
 
-                 emailext(   
+                 mail(   
                     email to: "khadersufiya@gmail.com",
                     subject: "Unit and Integration Test Status Email",
-                    body: "Test was successful!",
-                    attachmentsPattern: 'test.log'
+                    body: "Test was successful!"
                )
                 }
 
@@ -42,7 +39,7 @@ agent any
              } 
         post{
                 success{
-                    emailext to: "khadersufiya@gmail.com",
+                    mail to: "khadersufiya@gmail.com",
                     subject: "Security Scan Status Email",
                     body: "Security Scan was successful!"
 
@@ -62,7 +59,7 @@ agent any
              } 
         post{
                 success{
-                    emailext to: "khadersufiya@gmail.com",
+                    mail to: "khadersufiya@gmail.com",
                     subject: "Integration Test Status Email",
                     body: "Test was successful!"
                 }
