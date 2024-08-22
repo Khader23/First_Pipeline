@@ -13,8 +13,8 @@ agent any
         } 
       stage('Unit and Integration Tests'){        
         steps{ 
-            echo "Run units test " 
-             
+            echo "Using TestComplete as the test automation tool to ensure code is functioning"
+            echo "Making sure application is successful "
             } 
         post {
                 always{                    
