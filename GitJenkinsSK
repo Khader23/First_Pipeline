@@ -23,7 +23,7 @@ agent any
                     mail to: "khadersufiya@gmail.com",
                     subject: "Unit and Integration Test Status Email",
                     body: "Integration Test Status: ${currentBuild.currentResult}. Check for log attachment.",
-                    attachmentsPattern: 'UnitAndIntegrationTests.log'
+                    attachmentsPattern: '***/*.log'
                
                 }
 
