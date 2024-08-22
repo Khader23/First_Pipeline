@@ -15,7 +15,7 @@ agent any
         steps{ 
             echo "Run units test for code functionality and integration tests to assemble all the componenets into an application, use 'TestComplete' test automation tool" 
                script {
-                    bat 'echo "Run units test for code functionality and integration tests to assemble all the componenets into an application, use 'TestCompletetool' test automation tool" > UnitAndIntegrationTests.txt'
+                    bat 'echo "Run units test for code functionality and integration tests to assemble all the componenets into an application, use TestComplete test automation tool" > UnitAndIntegrationTests.txt'
                }
             } 
         post {
