@@ -14,15 +14,20 @@ agent any
       stage('Unit and Integration Tests'){        
         steps{ 
             echo "Run units test for code functionality and integration tests to assemble all the componenets into an application, use 'TestComplete' test automation tool" 
-            
+               script {
+                    sh 'echo "[Pipeline] { (Unit and Integration Tests)[Pipeline] echo
+                    Run units test for code functionality and integration tests to assemble all the componenets into an application, use 'TestComplete' test automation tool
+                    Post stage
+                    [Pipeline] mail
+                    [Pipeline] }" > UnitAndIntegrationTests.log'
+               }
             } 
         post {
-                success{
-
-                    
+                always{                    
                     mail to: "khadersufiya@gmail.com",
                     subject: "Unit and Integration Test Status Email",
-                    body: "Test was successful!"
+                    body: "Integration Test Status: ${currentBuild.currentResult}. Check for log attachment.",
+                    attachmentsPattern: 'UnitAndIntegrationTests.log'
                
                 }
 
