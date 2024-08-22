@@ -20,7 +20,7 @@ agent any
                 success{
 
                     
-                    email to: "khadersufiya@gmail.com",
+                    mail to: "khadersufiya@gmail.com",
                     subject: "Unit and Integration Test Status Email",
                     body: "Test was successful!"
                
