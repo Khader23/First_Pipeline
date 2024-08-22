@@ -15,7 +15,7 @@ agent any
         steps{ 
             echo "Run units test for code functionality and integration tests to assemble all the componenets into an application, use 'TestComplete' test automation tool" 
                script {
-                    sh 'echo "Run units test for code functionality and integration tests to assemble all the componenets into an application, use 'TestComplete' test automation tool" > UnitAndIntegrationTests.log'
+                    sh 'echo "Run units test for code functionality and integration tests to assemble all the componenets into an application, use 'TestComplete' test automation tool" > UnitAndIntegrationTests.txt'
                }
             } 
         post {
@@ -24,7 +24,7 @@ agent any
                         to: "khadersufiya@gmail.com",
                         subject: "Unit and Integration Test Status Email",
                         body: "Integration Test Status: ${currentBuild.currentResult}. Check for log attachment.",
-                        attachmentsPattern: 'UnitAndIntegrationTests.log'
+                        attachmentsPattern: 'UnitAndIntegrationTests.txt'
                     )
                 }
 
