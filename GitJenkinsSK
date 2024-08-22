@@ -21,7 +21,7 @@ agent any
                     emailext(
                         to: "khadersufiya@gmail.com",
                         subject: "Unit and Integration Test Status Email",
-                        body: "Integration Test Status: success. Check for log attachment.",
+                        body: "Integration Test Status: Success. Check for log attachment.",
                         attachmentsPattern: 'UnitAndIntegrationTests.txt',
                         from: "khadersufiya@gmail.com"
                     )
@@ -31,19 +31,21 @@ agent any
         }        
       stage('Code Analysis'){   
         steps{ 
-              echo "Analyze code and compare it against industry standards to ensure the requirements are met, the code analysis tool for this is SonarQube" 
+              echo "Analyze code and compare it against industry standards to ensure the requirements are met, using SonarQube for analysing code" 
             } 
        } 
        stage('Security Scan'){    
         steps{             
-              echo "Check code for any vulnerabilities, use Synk to do code scanning" 
+              echo "Checking code for any vulnerabilities, using Synk for security scanning" 
              } 
         post{
                 always{
                    emailext(
                         to: "khadersufiya@gmail.com",
                         subject: "Security Scan Status Email",
-                        body: "Security Scan was successful!"
+                        body: "Security Scan Status: Success. Check for log attachment",
+                        attachmentsPattern: 'SecurityScan.txt',
+                        from: "khadersufiya@gmail.com"
                     )
                    
                 }
@@ -64,7 +66,9 @@ agent any
                     emailext(
                         to: "khadersufiya@gmail.com",
                         subject: "Integration Test Status Email",
-                        body: "Test was successful!"
+                        body: "Test Status: Success. Check for log attachment",
+                        attachmentsPattern: 'Test.txt',
+                        from: "khadersufiya@gmail.com"
                     )
                 }
 
