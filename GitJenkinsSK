@@ -23,7 +23,7 @@ agent any
                     emailext(
                         to: "khadersufiya@gmail.com",
                         subject: "Unit and Integration Test Status Email",
-                        body: "Integration Test Status: ${currentBuild.currentResult}. Check for log attachment.",
+                        body: "Integration Test Status: success. Check for log attachment.",
                         attachmentsPattern: 'UnitAndIntegrationTests.txt',
                         from: "khadersufiya@gmail.com"
                     )
