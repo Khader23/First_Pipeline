@@ -1,1 +1,19 @@
+//Pipeline Block 
+pipeline { 
+    //Jenkins will run the jobs on any available nodes    
+agent any 
 
+  //First stage is build    
+  stages{       
+      stage('Build'){         
+        steps{ 
+               //Jenkins must be configured to build your code
+               //The code must build an artifact like Docker image 
+         
+            } 
+        } 
+      stage('Test'){   
+        steps{ 
+               
+            } 
+       } 
