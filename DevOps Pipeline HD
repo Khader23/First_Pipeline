@@ -1,4 +1,4 @@
-//Pipeline Block 
+ //Pipeline Block 
 pipeline { 
     //Jenkins will run the jobs on any available nodes    
 agent any 
@@ -7,21 +7,23 @@ agent any
   stages{       
       stage('Build'){         
         steps{ 
-               //Jenkins must be configured to build your code
-               //The code must build an artifact like Docker image 
+              echo "Code compilation and packaging stage, a build automation tool to use is Maven" 
          
             } 
         } 
-      stage('Test'){   
+             
+      stage('Deploy to Staging'){            
         steps{ 
-               //Configure Jenkins to run automated tests on my code
-               // Application must be tested in the test environment.
-            } 
+              echo "Deploy the application to a staging server" 
+              } 
        } 
-      stage('Deploy'){   
+      
+      stage('Deploy to Production'){        
+            
         steps{ 
-               // Deploy my application to a test environment       
-            } 
-       } 
-    }
-}
+              echo "Deploy the application to a production server"             
+             } 
+        } 
+       
+  } 
+} 
