@@ -14,6 +14,12 @@ agent any
         } 
       stage('Test'){   
         steps{ 
-               
+               //Configure Jenkins to run automated tests on my code
+               // Application must be tested in the test environment.
+            } 
+       } 
+      stage('Deploy'){   
+        steps{ 
+               // Deploy my application to a test environment       
             } 
        } 
